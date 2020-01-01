@@ -15,16 +15,20 @@ var container = document.getElementsByClassName("container")[0],
     
    
 div1.onclick = function(){
-
+   if(container.children[0].className ==""){
     if(container.children[x].className =="imgO"){
         div1.classList.add("imgX")
     }else{
         div1.classList.add("imgO")
     }
     x=0;
+   }
+    
+  
 }
 
 div2.onclick = function(){
+    if(container.children[1].className ==""){
     if(container.children[x].className =="imgO"){
         div2.classList.add("imgX")
     }else{
@@ -32,8 +36,9 @@ div2.onclick = function(){
     }
     x=1;
 }
+}
 div3.onclick = function(){
-    
+    if(container.children[2].className ==""){
         if(container.children[x].className=="imgO"){
             div3.classList.add("imgX")
         }else{
@@ -42,8 +47,9 @@ div3.onclick = function(){
     
     x=2;
 }
+}
 div4.onclick = function(){
-    
+    if(container.children[3].className ==""){
     if(container.children[x].className=="imgO"){
         div4.classList.add("imgX")
     }else{
@@ -52,8 +58,9 @@ div4.onclick = function(){
 
 x=3;
 }
+}
 div5.onclick = function(){
-    
+    if(container.children[4].className ==""){
     if(container.children[x].className=="imgO"){
         div5.classList.add("imgX")
     }else{
@@ -62,18 +69,20 @@ div5.onclick = function(){
 
 x=4;
 }
+}
 div6.onclick = function(){
-    
+    if(container.children[5].className ==""){
     if(container.children[x].className=="imgO"){
         div6.classList.add("imgX")
     }else{
         div6.classList.add("imgO")
     }
-
+}
 x=5;
 }
 div7.onclick = function(){
-    
+
+if(container.children[6].className ==""){
     if(container.children[x].className=="imgO"){
         div7.classList.add("imgX")
     }else{
@@ -82,8 +91,10 @@ div7.onclick = function(){
 
 x=6;
 }
+}
+
 div8.onclick = function(){
-    
+    if(container.children[7].className ==""){
     if(container.children[x].className=="imgO"){
         div8.classList.add("imgX")
     }else{
@@ -92,8 +103,9 @@ div8.onclick = function(){
 
 x=7;
 }
+}
 div9.onclick = function(){
-    
+    if(container.children[8].className ==""){
     if(container.children[x].className=="imgO"){
         div9.classList.add("imgX")
     }else{
@@ -102,7 +114,7 @@ div9.onclick = function(){
 
 x=8;
 }
-
+}
 var reset = document.querySelector("button"),
 win = document.getElementById("win");
 reset.onclick = function(){
@@ -112,7 +124,12 @@ reset.onclick = function(){
     }
     win.style.display = "none";
 }
-window.onclick = function(){
+var result_1 =0,
+    result_2 =0,
+    player_1 = document.getElementById("player1"),
+    player_2 = document.getElementById("player2");
+     window.onclick = function(){
+    /*
     if(((container.children[0].className =="imgO" && container.children[1].className =="imgO" && container.children[2].className =="imgO")
     ||(container.children[0].className =="imgO" && container.children[3].className =="imgO" && container.children[6].className =="imgO") 
     ||( container.children[0].className =="imgO" && container.children[4].className =="imgO" && container.children[8].className =="imgO")
@@ -121,10 +138,10 @@ window.onclick = function(){
     ||(container.children[3].className =="imgO" && container.children[4].className =="imgO" && container.children[5].className =="imgO") 
     ||(container.children[6].className =="imgO" && container.children[7].className =="imgO" && container.children[8].className =="imgO") 
     ||(container.children[2].className =="imgO" && container.children[4].className =="imgO" && container.children[6].className =="imgO") 
-    )
+     )
     ||((container.children[0].className =="imgX" && container.children[1].className =="imgX" && container.children[2].className =="imgX")
     ||(container.children[0].className =="imgX" && container.children[3].className =="imgX" && container.children[6].className =="imgX") 
-    ||( container.children[0].className =="imgX" && container.children[4].className =="imgX" && container.children[8].className =="imgX")
+    ||(container.children[0].className =="imgX" && container.children[4].className =="imgX" && container.children[8].className =="imgX")
     ||(container.children[1].className =="imgX" && container.children[4].className =="imgX" && container.children[7].className =="imgX")
     ||(container.children[2].className =="imgX" && container.children[5].className =="imgX" && container.children[8].className =="imgX")
     ||(container.children[3].className =="imgX" && container.children[4].className =="imgX" && container.children[5].className =="imgX") 
@@ -133,5 +150,35 @@ window.onclick = function(){
     )){
 
             win.style.display = "block";
+            y=y+1;
+            result.textContent = y
+    }
+    */
+    if(((container.children[0].className =="imgO" && container.children[1].className =="imgO" && container.children[2].className =="imgO")
+    ||(container.children[0].className =="imgO" && container.children[3].className =="imgO" && container.children[6].className =="imgO") 
+    ||( container.children[0].className =="imgO" && container.children[4].className =="imgO" && container.children[8].className =="imgO")
+    ||(container.children[1].className =="imgO" && container.children[4].className =="imgO" && container.children[7].className =="imgO")
+    || (container.children[2].className =="imgO" && container.children[5].className =="imgO" && container.children[8].className =="imgO")
+    ||(container.children[3].className =="imgO" && container.children[4].className =="imgO" && container.children[5].className =="imgO") 
+    ||(container.children[6].className =="imgO" && container.children[7].className =="imgO" && container.children[8].className =="imgO") 
+    ||(container.children[2].className =="imgO" && container.children[4].className =="imgO" && container.children[6].className =="imgO") 
+     )
+    ){
+
+            win.style.display = "block";
+            result_1=result_1+1;
+            player_1.textContent = "palyer 1 :" + result_1  ;
+
+    }else if((container.children[0].className =="imgX" && container.children[1].className =="imgX" && container.children[2].className =="imgX")
+    ||(container.children[0].className =="imgX" && container.children[3].className =="imgX" && container.children[6].className =="imgX") 
+    ||(container.children[0].className =="imgX" && container.children[4].className =="imgX" && container.children[8].className =="imgX")
+    ||(container.children[1].className =="imgX" && container.children[4].className =="imgX" && container.children[7].className =="imgX")
+    ||(container.children[2].className =="imgX" && container.children[5].className =="imgX" && container.children[8].className =="imgX")
+    ||(container.children[3].className =="imgX" && container.children[4].className =="imgX" && container.children[5].className =="imgX") 
+    ||(container.children[6].className =="imgX" && container.children[7].className =="imgX" && container.children[8].className =="imgX") 
+    ||(container.children[2].className =="imgX" && container.children[4].className =="imgX" && container.children[6].className =="imgX") ){
+        win.style.display = "block";
+            result_2=result_2+1;
+            player_2.textContent = "palyer 2 :" + result_2;
     }
 }
